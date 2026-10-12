@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#160b20">
+<title>Для Ани ❤️</title>
+<style>
+:root { color-scheme: dark; --pink:#ff8db8; --hot:#ff3f83; --cream:#fff1f7; }
+* { box-sizing:border-box; }
+html,body { margin:0; min-height:100%; }
+body {
+  min-height:100svh; overflow:hidden; display:grid; place-items:center;
+  font-family: ui-rounded, "Trebuchet MS", system-ui, -apple-system, sans-serif;
+  color:var(--cream);
+  background: radial-gradient(ellipse at 50% 42%, #4b173b 0%, #24102e 35%, #100a1c 75%, #080711 100%);
+}
+#stars,.particles { position:fixed; inset:0; pointer-events:none; overflow:hidden; }
+.star { position:absolute; width:2px;height:2px;border-radius:50%;background:#fff3fb;opacity:.4;animation:twinkle 3s ease-in-out infinite alternate; }
+@keyframes twinkle { to { opacity:1; transform:scale(1.8); } }
+.particle { position:absolute; bottom:-30px; color:#ff91bc; opacity:0; animation:floatUp linear forwards; filter:drop-shadow(0 0 7px #ff3f83); }
+@keyframes floatUp { 10%{opacity:.8} 100%{transform:translateY(-115vh) translateX(var(--drift)) rotate(35deg);opacity:0} }
+.card { position:relative; width:min(92vw,620px); padding:clamp(24px,6vw,48px) 22px; text-align:center; z-index:2; }
+.kicker { letter-spacing:.22em; text-transform:uppercase; font-size:.72rem; color:#ffc0d8; opacity:0; animation:fade .9s .3s forwards; }
+h1 { font-size:clamp(2.1rem,8vw,4rem); margin:.45rem 0 .5rem; font-weight:700; text-shadow:0 0 22px #ff5c9c65; opacity:0; animation:fade .9s .65s forwards; }
+.subtitle { color:#f9c9dd; line-height:1.65; font-size:clamp(1rem,3.5vw,1.12rem); max-width:440px; margin:0 auto; opacity:0; animation:fade 1s 1s forwards; }
+.heart-wrap { width:190px; height:190px; margin:18px auto 24px; display:grid;place-items:center; position:relative; opacity:0; animation:fade 1s .15s forwards; }
+.glow { position:absolute; width:150px;height:150px;border-radius:50%; background:#ff3b8245; filter:blur(30px); animation:glow 1.25s ease-in-out infinite; }
+.heart { width:105px;height:105px; position:relative; transform:rotate(-45deg); background:linear-gradient(135deg,#ffb5d0,#ff397e 60%,#c81763); filter:drop-shadow(0 0 17px #ff4a92aa); animation:beat 1.15s ease-in-out infinite; cursor:pointer; border:0; padding:0; }
+.heart:before,.heart:after { content:""; position:absolute;width:105px;height:105px;border-radius:50%;background:inherit; }
+.heart:before { top:-52px;left:0; }
+.heart:after { top:0;left:52px; }
+@keyframes beat { 0%,100%{transform:rotate(-45deg) scale(1)} 12%{transform:rotate(-45deg) scale(1.1)} 24%{transform:rotate(-45deg) scale(1)} 38%{transform:rotate(-45deg) scale(1.06)} }
+@keyframes glow { 50%{transform:scale(1.25);opacity:.7} }
+@keyframes fade { to{opacity:1; transform:translateY(0)} }
+.message { margin:24px auto 0; font-size:clamp(1.02rem,3.7vw,1.2rem); line-height:1.7; max-width:500px; color:#fff0f6; opacity:0; animation:fade 1s 1.3s forwards; }
+.signature { margin-top:17px; font-size:.9rem; color:#ffb9d3; opacity:0; animation:fade 1s 1.6s forwards; }
+button.action { margin-top:27px; border:1px solid #ffb2d0a8; background:linear-gradient(135deg,#ff6fa7,#d52b72); color:white; font-size:1rem; padding:14px 22px; border-radius:999px; box-shadow:0 8px 30px #e52c7550; cursor:pointer; transition:transform .2s,filter .2s; }
+button.action:hover { transform:translateY(-2px);filter:brightness(1.08); }
+button.action:active { transform:scale(.97); }
+.hint { margin-top:13px; color:#dca9c1; font-size:.78rem; }
+@media (prefers-reduced-motion:reduce) { *,*:before,*:after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; } }
+</style>
+</head>
+<body>
+<div id="stars"></div><div class="particles" id="particles"></div>
+<main class="card">
+  <div class="kicker">маленькое послание для тебя</div>
+  <h1>Анюта ❤️</h1>
+  <div class="heart-wrap"><div class="glow"></div><button class="heart" id="heart" aria-label="Нажми на сердце"></button></div>
+  <p class="subtitle">Если бы я мог показать тебе всё, что чувствую, тебе не пришлось бы искать это в моих словах.</p>
+  <p class="message" id="message">Даже на расстоянии моё сердце тянется к тебе. ❤️</p>
+  <div class="signature">Ты — особенная часть моей истории.</div>
+  <button class="action" id="action">Нажми на моё сердце ❤️</button>
+  <div class="hint">для тебя — с теплом</div>
+</main>
+<script>
+const stars = document.getElementById('stars');
+for(let i=0;i<95;i++){ const s=document.createElement('i'); s.className='star'; s.style.left=Math.random()*100+'%'; s.style.top=Math.random()*100+'%'; s.style.animationDelay=(Math.random()*3)+'s'; s.style.opacity=(.15+Math.random()*.7); stars.appendChild(s); }
+const particles=document.getElementById('particles');
+function floatHeart(x=Math.random()*100, y=100, force=false){
+ const p=document.createElement('span'); p.className='particle'; p.textContent=Math.random()>.35?'♥':'✦';
+ p.style.left=x+'%'; p.style.bottom=(100-y)+'%'; p.style.fontSize=(12+Math.random()*20)+'px';
+ p.style.setProperty('--drift', (Math.random()*130-65)+'px'); p.style.animationDuration=(5+Math.random()*5)+'s';
+ particles.appendChild(p); setTimeout(()=>p.remove(),10500);
+}
+setInterval(()=>floatHeart(),420);
+function burst(){
+ const heart=document.getElementById('heart'); heart.animate([{filter:'drop-shadow(0 0 18px #ff4a92)'},{filter:'drop-shadow(0 0 42px #fff) brightness(1.35)'},{filter:'drop-shadow(0 0 18px #ff4a92)'}],{duration:650});
+ for(let i=0;i<30;i++) setTimeout(()=>floatHeart(50+(Math.random()*36-18), 40+Math.random()*25, true),i*24);
+ const msg=document.getElementById('message'); msg.animate([{transform:'scale(.96)',opacity:.65},{transform:'scale(1.04)',opacity:1},{transform:'scale(1)',opacity:1}],{duration:650});
+}
+document.getElementById('heart').addEventListener('click',burst);
+document.getElementById('action').addEventListener('click',burst);
+</script>
+</body>
+</html>
