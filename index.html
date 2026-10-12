@@ -1,77 +1,13 @@
-<!doctype html>
-<html lang="ru">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#160b20">
-<title>Для Ани ❤️</title>
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#170f2e"><title>Анюта, устроим уютный вечер? 💗</title>
 <style>
-:root { color-scheme: dark; --pink:#ff8db8; --hot:#ff3f83; --cream:#fff1f7; }
-* { box-sizing:border-box; }
-html,body { margin:0; min-height:100%; }
-body {
-  min-height:100svh; overflow:hidden; display:grid; place-items:center;
-  font-family: ui-rounded, "Trebuchet MS", system-ui, -apple-system, sans-serif;
-  color:var(--cream);
-  background: radial-gradient(ellipse at 50% 42%, #4b173b 0%, #24102e 35%, #100a1c 75%, #080711 100%);
-}
-#stars,.particles { position:fixed; inset:0; pointer-events:none; overflow:hidden; }
-.star { position:absolute; width:2px;height:2px;border-radius:50%;background:#fff3fb;opacity:.4;animation:twinkle 3s ease-in-out infinite alternate; }
-@keyframes twinkle { to { opacity:1; transform:scale(1.8); } }
-.particle { position:absolute; bottom:-30px; color:#ff91bc; opacity:0; animation:floatUp linear forwards; filter:drop-shadow(0 0 7px #ff3f83); }
-@keyframes floatUp { 10%{opacity:.8} 100%{transform:translateY(-115vh) translateX(var(--drift)) rotate(35deg);opacity:0} }
-.card { position:relative; width:min(92vw,620px); padding:clamp(24px,6vw,48px) 22px; text-align:center; z-index:2; }
-.kicker { letter-spacing:.22em; text-transform:uppercase; font-size:.72rem; color:#ffc0d8; opacity:0; animation:fade .9s .3s forwards; }
-h1 { font-size:clamp(2.1rem,8vw,4rem); margin:.45rem 0 .5rem; font-weight:700; text-shadow:0 0 22px #ff5c9c65; opacity:0; animation:fade .9s .65s forwards; }
-.subtitle { color:#f9c9dd; line-height:1.65; font-size:clamp(1rem,3.5vw,1.12rem); max-width:440px; margin:0 auto; opacity:0; animation:fade 1s 1s forwards; }
-.heart-wrap { width:190px; height:190px; margin:18px auto 24px; display:grid;place-items:center; position:relative; opacity:0; animation:fade 1s .15s forwards; }
-.glow { position:absolute; width:150px;height:150px;border-radius:50%; background:#ff3b8245; filter:blur(30px); animation:glow 1.25s ease-in-out infinite; }
-.heart { width:105px;height:105px; position:relative; transform:rotate(-45deg); background:linear-gradient(135deg,#ffb5d0,#ff397e 60%,#c81763); filter:drop-shadow(0 0 17px #ff4a92aa); animation:beat 1.15s ease-in-out infinite; cursor:pointer; border:0; padding:0; }
-.heart:before,.heart:after { content:""; position:absolute;width:105px;height:105px;border-radius:50%;background:inherit; }
-.heart:before { top:-52px;left:0; }
-.heart:after { top:0;left:52px; }
-@keyframes beat { 0%,100%{transform:rotate(-45deg) scale(1)} 12%{transform:rotate(-45deg) scale(1.1)} 24%{transform:rotate(-45deg) scale(1)} 38%{transform:rotate(-45deg) scale(1.06)} }
-@keyframes glow { 50%{transform:scale(1.25);opacity:.7} }
-@keyframes fade { to{opacity:1; transform:translateY(0)} }
-.message { margin:24px auto 0; font-size:clamp(1.02rem,3.7vw,1.2rem); line-height:1.7; max-width:500px; color:#fff0f6; opacity:0; animation:fade 1s 1.3s forwards; }
-.signature { margin-top:17px; font-size:.9rem; color:#ffb9d3; opacity:0; animation:fade 1s 1.6s forwards; }
-button.action { margin-top:27px; border:1px solid #ffb2d0a8; background:linear-gradient(135deg,#ff6fa7,#d52b72); color:white; font-size:1rem; padding:14px 22px; border-radius:999px; box-shadow:0 8px 30px #e52c7550; cursor:pointer; transition:transform .2s,filter .2s; }
-button.action:hover { transform:translateY(-2px);filter:brightness(1.08); }
-button.action:active { transform:scale(.97); }
-.hint { margin-top:13px; color:#dca9c1; font-size:.78rem; }
-@media (prefers-reduced-motion:reduce) { *,*:before,*:after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; } }
-</style>
-</head>
-<body>
-<div id="stars"></div><div class="particles" id="particles"></div>
-<main class="card">
-  <div class="kicker">маленькое послание для тебя</div>
-  <h1>Анюта ❤️</h1>
-  <div class="heart-wrap"><div class="glow"></div><button class="heart" id="heart" aria-label="Нажми на сердце"></button></div>
-  <p class="subtitle">Если бы я мог показать тебе всё, что чувствую, тебе не пришлось бы искать это в моих словах.</p>
-  <p class="message" id="message">Даже на расстоянии моё сердце тянется к тебе. ❤️</p>
-  <div class="signature">Ты — особенная часть моей истории.</div>
-  <button class="action" id="action">Нажми на моё сердце ❤️</button>
-  <div class="hint">для тебя — с теплом</div>
-</main>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;color:#fff4f8;font-family:system-ui,-apple-system,sans-serif;background:radial-gradient(circle at 15% 5%,#57315f,transparent 35%),radial-gradient(circle at 90% 75%,#49204d,transparent 35%),linear-gradient(145deg,#100c23,#21102f 60%,#35172f)}.wrap{max-width:720px;margin:auto;padding:24px 14px 42px}.hero{text-align:center;padding:20px 8px}.heart{font-size:3.3rem;filter:drop-shadow(0 0 16px #ff5d9e);animation:pulse 1.5s infinite}@keyframes pulse{50%{transform:scale(1.12)}}.eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#ffc3dc}h1{font-size:clamp(2rem,8vw,3.4rem);line-height:1.08;margin:12px 0}.sub,.note{color:#d8c9e7;line-height:1.6}.card{background:#ffffff12;border:1px solid #ffffff26;border-radius:22px;padding:20px;margin:14px 0;backdrop-filter:blur(12px)}h2{font-size:1.12rem;margin:0 0 12px}.choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:9px}.choice,.time{border:1px solid #ffffff38;background:#ffffff0b;color:#fff4f8;border-radius:14px;padding:12px;cursor:pointer;font:inherit}.choice{text-align:left}.choice small{display:block;color:#d8c9e7;margin-top:4px;font-size:.8rem}.selected{border-color:#ff83b5!important;background:#ff83b526!important}.times{display:flex;flex-wrap:wrap;gap:8px}.note{font-size:.9rem}.primary{width:100%;border:0;border-radius:15px;padding:15px;margin-top:12px;background:linear-gradient(110deg,#ff83b5,#ffc0d8);color:#36142d;font-weight:800;font-size:1rem;cursor:pointer}.secondary{width:100%;margin-top:9px;border:1px solid #ffffff38;background:transparent;color:#d8c9e7;border-radius:15px;padding:12px;font:inherit;cursor:pointer}.result{display:none;text-align:center;line-height:1.6}.result.show{display:block}.summary{white-space:pre-line;background:#0002;border-radius:14px;padding:14px;margin:14px 0}.footer{text-align:center;color:#b8a5cb;font-size:.8rem;padding:16px}
+</style></head><body><main class="wrap"><header class="hero"><div class="heart">💗</div><div class="eyebrow">маленькое приглашение</div><h1>Анюта, устроим<br>уютный вечер?</h1><p class="sub">Я подумал, что было бы здорово провести время вместе — без спешки, с чем-нибудь вкусным и тем, что выберешь ты.</p></header>
+<section class="card" id="form"><h2>🗓 Когда тебе удобно?</h2><p class="note">Суббота, 17 октября — если у тебя получится. Выбери время или предложи своё.</p><div class="times" id="times"><button class="time" data-time="15:00">15:00</button><button class="time" data-time="17:00">17:00</button><button class="time" data-time="19:00">19:00</button><button class="time" data-time="20:00">20:00</button></div><p class="note">Или напиши удобное время:</p><input id="customTime" placeholder="Например, после 18:30" aria-label="Другое время" style="width:100%;padding:12px;border-radius:12px;border:1px solid #ffffff38;background:#ffffff0b;color:white;font:inherit">
+<div style="height:18px"></div><h2>🍿 Что устроим?</h2><div class="choices" id="activities"><button class="choice" data-value="Фильм + вкусная доставка">🎬 Фильм + еда<small>Кино и вкусности</small></button><button class="choice" data-value="Игры и уютный вечер">🎮 Игры и уют<small>Поиграем и поболтаем</small></button><button class="choice" data-value="Музыка и разговоры">🎧 Музыка и разговоры<small>Спокойный вечер</small></button><button class="choice" data-value="Сюрприз на твой выбор">✨ Твой вариант<small>Ты выбираешь</small></button></div>
+<div style="height:18px"></div><h2>🍓 Что вкусного?</h2><div class="choices" id="food"><button class="choice" data-value="Пицца">🍕 Пицца</button><button class="choice" data-value="Роллы">🍣 Роллы</button><button class="choice" data-value="Сладкое">🍰 Что-нибудь сладкое</button><button class="choice" data-value="Выбрать вместе">💞 Выберем вместе</button></div>
+<p class="note" style="margin-top:16px">Это просто приглашение, без давления. Если суббота не подходит или не хочется — всё нормально ❤️</p><button class="primary" id="yes">Да, давай выберем вечер 💗</button><button class="secondary" id="maybe">В другой раз / пока не знаю</button></section>
+<section class="card result" id="result" aria-live="polite"><div class="heart">💞</div><h2 id="title">Вот что у нас может получиться</h2><p id="desc"></p><div class="summary" id="summary"></div><p class="note">Ничего не бронируется автоматически. Можешь прислать мне скриншот своего выбора или просто написать, что тебе подходит.</p><button class="primary" id="back">Изменить выбор</button></section><div class="footer">Сделано с теплом и без давления 💗</div></main>
 <script>
-const stars = document.getElementById('stars');
-for(let i=0;i<95;i++){ const s=document.createElement('i'); s.className='star'; s.style.left=Math.random()*100+'%'; s.style.top=Math.random()*100+'%'; s.style.animationDelay=(Math.random()*3)+'s'; s.style.opacity=(.15+Math.random()*.7); stars.appendChild(s); }
-const particles=document.getElementById('particles');
-function floatHeart(x=Math.random()*100, y=100, force=false){
- const p=document.createElement('span'); p.className='particle'; p.textContent=Math.random()>.35?'♥':'✦';
- p.style.left=x+'%'; p.style.bottom=(100-y)+'%'; p.style.fontSize=(12+Math.random()*20)+'px';
- p.style.setProperty('--drift', (Math.random()*130-65)+'px'); p.style.animationDuration=(5+Math.random()*5)+'s';
- particles.appendChild(p); setTimeout(()=>p.remove(),10500);
-}
-setInterval(()=>floatHeart(),420);
-function burst(){
- const heart=document.getElementById('heart'); heart.animate([{filter:'drop-shadow(0 0 18px #ff4a92)'},{filter:'drop-shadow(0 0 42px #fff) brightness(1.35)'},{filter:'drop-shadow(0 0 18px #ff4a92)'}],{duration:650});
- for(let i=0;i<30;i++) setTimeout(()=>floatHeart(50+(Math.random()*36-18), 40+Math.random()*25, true),i*24);
- const msg=document.getElementById('message'); msg.animate([{transform:'scale(.96)',opacity:.65},{transform:'scale(1.04)',opacity:1},{transform:'scale(1)',opacity:1}],{duration:650});
-}
-document.getElementById('heart').addEventListener('click',burst);
-document.getElementById('action').addEventListener('click',burst);
-</script>
-</body>
-</html>
+const s={time:"",activity:"",food:""};function bind(id,key,attr){document.querySelectorAll("#"+id+" button").forEach(b=>b.onclick=()=>{document.querySelectorAll("#"+id+" button").forEach(x=>x.classList.remove("selected"));b.classList.add("selected");s[key]=b.dataset[attr]||""})}bind("times","time","time");bind("activities","activity","value");bind("food","food","value");
+function show(yes){document.getElementById("form").style.display="none";document.getElementById("result").style.display="block";document.getElementById("result").classList.add("show");if(yes){document.getElementById("title").textContent="Буду рад, если получится 💗";document.getElementById("desc").textContent="Твой вариант вечера:";document.getElementById("summary").textContent="Суббота, 17 октября\nВремя: "+(document.getElementById("customTime").value.trim()||s.time||"выберем вместе")+"\nПлан: "+(s.activity||"выберем вместе")+"\nВкусное: "+(s.food||"решим вместе")}else{document.getElementById("title").textContent="Спасибо, что посмотрела ❤️";document.getElementById("desc").textContent="Ничего страшного, если сейчас не хочется или не получается. Решать тебе.";document.getElementById("summary").textContent="Можно вернуться к этой идее в другой раз — или не возвращаться, как тебе комфортно."}}document.getElementById("yes").onclick=()=>show(true);document.getElementById("maybe").onclick=()=>show(false);document.getElementById("back").onclick=()=>{document.getElementById("result").style.display="none";document.getElementById("form").style.display="block"};
+</script></body></html>
